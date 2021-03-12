@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  citus:
+    image: citusdata/citus
+    ports: 
+      - 5500:5432
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+volumes: 
+  pgdata:
