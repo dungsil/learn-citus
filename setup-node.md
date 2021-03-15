@@ -16,11 +16,6 @@ SELECT citus_add_node('192.168.100.3', 5432);
 SELECT citus_add_node('192.168.100.4', 5432);
 ```
 
-실제 노드가 추가되었는지 확인하기 위해서는 아래의 SQL 입력
-```sql
-SELECT * FROM citus_get_active_worker_nodes();
-```
-
 ## 3. 샤드 재정렬
 워커 노드 추가 후 새로운 워커에 샤드를 재정렬합니다.
 ```sql

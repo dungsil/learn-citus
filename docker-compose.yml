@@ -1,14 +1,47 @@
 version: '3.8'
 
 services:
-  citus:
+  coordination:
     image: citusdata/citus
+    networks: 
+      - citus
     ports: 
       - 5500:5432
     environment: 
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
+  work1:
+    image: citusdata/citus
+    ports: 
+      - 5501:5432
+    networks: 
+      - citus
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+  work2:
+    image: citusdata/citus
+    ports: 
+      - 5502:5432
+    networks: 
+      - citus
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+  work3:
+    image: citusdata/citus
+    ports: 
+      - 5503:5432
+    networks: 
+      - citus
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
 
-volumes: 
-  pgdata:
+networks: 
+  citus:
+    driver: bridge

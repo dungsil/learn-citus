@@ -7,6 +7,7 @@
 ## 목차
  - [설치](./setup.md)
  - [노드 설정](./setup-node.md)
+ - [분산 테이블 생성하기](./create-distributed-table.md)
 
 ## 저작권
 해당 자료는 Citus 공식 홈페이지/저장소에서 가져왔으며 모든 저작권은 Citus Data Inc. 측에 있습니다.
