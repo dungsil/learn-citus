@@ -6,14 +6,14 @@
 코디네이션 노드는 사용자의 요청을 받아 워커 노드에게 요청을 분배하는 역할을 합니다.
 
 ```sql
-SELECT citus_set_coordinator_host('192.168.100.1', 5432);
+SELECT citus_set_coordinator_host('coordination', 5500);
 ```
 
 ## 2. 워커노드 추가
 ```sql
-SELECT citus_add_node('192.168.100.2', 5432);
-SELECT citus_add_node('192.168.100.3', 5432);
-SELECT citus_add_node('192.168.100.4', 5432);
+SELECT citus_add_node('work1', 5432);
+SELECT citus_add_node('work2', 5432);
+SELECT citus_add_node('work3', 5432);
 ```
 
 ## 3. 샤드 재정렬

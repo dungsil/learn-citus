@@ -2,19 +2,21 @@ version: '3.8'
 
 services:
   coordination:
+    container_name: coordination
     image: citusdata/citus
     networks: 
       - citus
     ports: 
-      - 5500:5432
+      - "5500:5432"
     environment: 
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
   work1:
+    container_name: work1
     image: citusdata/citus
     ports: 
-      - 5501:5432
+      - "5501:5432"
     networks: 
       - citus
     environment: 
@@ -22,9 +24,10 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
   work2:
+    container_name: work2
     image: citusdata/citus
     ports: 
-      - 5502:5432
+      - "5502:5432"
     networks: 
       - citus
     environment: 
@@ -32,9 +35,10 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
   work3:
+    container_name: work3
     image: citusdata/citus
     ports: 
-      - 5503:5432
+      - "5503:5432"
     networks: 
       - citus
     environment: 
